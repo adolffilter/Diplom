@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:diplomaISPr22_33_PankovEA"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="645" Width="875">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="BlueGrey" SecondaryColor="Cyan"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\hdnhd\Source\Repos\diplomaISPr22-33_PankovEA\Resources\5YXAp1RNeq4 1.png"/>
+        </Grid.Background>
+        <Border Height="480" Width="480" VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="10">
+            <Border.Background>
+                <SolidColorBrush Color="#FFFFFF" Opacity="0.7" />
+            </Border.Background>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Авторизация " FontSize="46" />
+                <TextBlock Text="авторизуйтесь, что бы использовать все функции" TextWrapping="Wrap" Width="270" TextAlignment="Center" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox x:Name="tbLoginUser" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Логин" FontSize="20"
+                         materialDesign:HintAssist.HintOpacity="1"/>
+                <PasswordBox x:Name="pbPasswordUser" Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}" Margin="0 15" materialDesign:HintAssist.Hint="Пароль"
+                     materialDesign:HintAssist.HintOpacity="1" FontSize="20" />
+                <Button Content="Вход" Click="clEnterSystem" Background="#E2F263" Margin="0 50 0 0" BorderBrush="#E2F263" Foreground="#000000"  materialDesign:ButtonAssist.CornerRadius="23" FontSize="20" Height="50" Width="172"/>
+
+
+            </StackPanel>
+
+        </Border>
 
     </Grid>
 </Window>
