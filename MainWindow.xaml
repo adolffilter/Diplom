@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:diplomaISPr22_33_PankovEA"
         mc:Ignorable="d"
        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="645" Width="875">
+        Title="" Height="645" Width="875" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <ResourceDictionary>
