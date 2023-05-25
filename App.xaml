@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:diplomaISPr22_33_PankovEA"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <BitmapImage x:Key="photo" UriSource="/Resources/1649232769_58-vsegda-pomnim-com-p-pustoe-litso-foto-76.jpg"/>
     </Application.Resources>
 </Application>

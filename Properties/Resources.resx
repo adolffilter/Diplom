@@ -121,6 +121,9 @@
   <data name="1618496549_21-p-fon-sklad-25 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1618496549_21-p-fon-sklad-25 1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="1649232769_58-vsegda-pomnim-com-p-pustoe-litso-foto-76" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1649232769_58-vsegda-pomnim-com-p-pustoe-litso-foto-76.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="5YXAp1RNeq4 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5YXAp1RNeq4 1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

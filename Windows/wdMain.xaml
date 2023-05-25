@@ -5,8 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:diplomaISPr22_33_PankovEA.Windows"
         mc:Ignorable="d"
-        Title="wdMain" Height="450" Width="800">
-    <Grid>
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         
+        Title="" Height="720" Width="1080" MinHeight="720" MinWidth="1080">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="BlueGrey" SecondaryColor="Cyan"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#011826">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Orientation="Horizontal">
+                <!--Image-->
+                <Border Width="60" Height="60" CornerRadius="360" BorderBrush="#E2F263" BorderThickness="2">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{Binding Photo, TargetNullValue={StaticResource photo}}"/>
+                    </Border.Background>
+                </Border>
+                <StackPanel Margin="15 0 0 0">
+                    <TextBlock x:Name="tbGetUser" Text="Бирюков Алесандр" Foreground="#EEF280" Margin="15 0 0 0"  FontSize="20"/>
+                    <Button x:Name="btOutSing" Style="{StaticResource MaterialDesignFlatAccentButton}" HorizontalAlignment="Left">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ExitToApp" Height="20" Width="20" Foreground="#FFFFFF"/>
+                            <TextBlock Text="Выход" Foreground="#FFFFFF"/>
+                                
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="btOpenPageStack" BorderThickness="0 0 0 1" BorderBrush="#EEF280" Content="Склад оборудования" Style="{StaticResource MaterialDesignFlatAccentButton}" materialDesign:ButtonAssist.CornerRadius="0" Foreground="#EEF280" FontSize="20"/>
+                <Button x:Name="btOpenPageOrder" Content="Заказы" Margin="78 0 0 0" BorderBrush="#EEF280"  Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="#EEF280" materialDesign:ButtonAssist.CornerRadius="0" FontSize="20"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row ="1">
+            <Frame x:Name="frMain"/>
+        </Grid>
+
     </Grid>
 </Window>

@@ -73,6 +73,16 @@ namespace diplomaISPr22_33_PankovEA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] _1649232769_58_vsegda_pomnim_com_p_pustoe_litso_foto_76 {
+            get {
+                object obj = ResourceManager.GetObject("1649232769_58-vsegda-pomnim-com-p-pustoe-litso-foto-76", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] _5YXAp1RNeq4_1 {
             get {
                 object obj = ResourceManager.GetObject("5YXAp1RNeq4 1", resourceCulture);
