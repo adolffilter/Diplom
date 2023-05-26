@@ -23,5 +23,26 @@ namespace diplomaISPr22_33_PankovEA.Windows
         {
             InitializeComponent();
         }
+        SolidColorBrush color = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E2F263"));
+        SolidColorBrush color1 = (SolidColorBrush)(new BrushConverter().ConvertFrom("#011826"));
+
+        private void clOpenPageStack(object sender, RoutedEventArgs e)
+        {
+            BtBorderTransparent();
+            btOpenPageStack.BorderBrush = color;
+        }
+
+        void BtBorderTransparent()
+        {
+            btOpenPageStack.BorderBrush = Brushes.Transparent;
+            btOpenPageOrder.BorderBrush = Brushes.Transparent;
+        }
+
+        private void clOpenPageOrder(object sender, RoutedEventArgs e)
+        {
+
+            BtBorderTransparent();
+            btOpenPageOrder.BorderBrush = color;
+        }
     }
 }

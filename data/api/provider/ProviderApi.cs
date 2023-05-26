@@ -34,7 +34,7 @@ namespace diplomaISPr22_33_PankovEA.data.api.provider
             return JsonConvert.DeserializeObject<List<Provider>>(json);
         }
 
-        public List<ProviderPost> GetPostAll()
+        public List<ProviderPost> GetPostAll(string search)
         {
             var builder = new UriBuilder("http://localhost:5000/api/Provider/Post");
 

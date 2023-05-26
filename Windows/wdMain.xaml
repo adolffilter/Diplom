@@ -46,8 +46,8 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button x:Name="btOpenPageStack" BorderThickness="0 0 0 1" BorderBrush="#EEF280" Content="Склад оборудования" Style="{StaticResource MaterialDesignFlatAccentButton}" materialDesign:ButtonAssist.CornerRadius="0" Foreground="#EEF280" FontSize="20"/>
-                <Button x:Name="btOpenPageOrder" Content="Заказы" Margin="78 0 0 0" BorderBrush="#EEF280"  Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="#EEF280" materialDesign:ButtonAssist.CornerRadius="0" FontSize="20"/>
+                <Button x:Name="btOpenPageStack" Click="clOpenPageStack" BorderThickness="0 0 0 1" BorderBrush="#EEF280" Content="Склад оборудования" Style="{StaticResource MaterialDesignFlatAccentButton}" materialDesign:ButtonAssist.CornerRadius="0" Foreground="#EEF280" FontSize="20"/>
+                <Button x:Name="btOpenPageOrder" Click="clOpenPageOrder" BorderThickness="0 0 0 1" Content="Заказы" Margin="78 0 0 0"  Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="#EEF280" materialDesign:ButtonAssist.CornerRadius="0" FontSize="20"/>
             </StackPanel>
         </Grid>
 

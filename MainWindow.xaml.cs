@@ -1,4 +1,6 @@
-﻿using System;
+﻿using diplomaISPr22_33_PankovEA.data.api.user;
+using diplomaISPr22_33_PankovEA.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,26 @@ namespace diplomaISPr22_33_PankovEA
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void clEnterSystem(object sender, RoutedEventArgs e)
+        {
+            var api = new UserApi();
+            var response = api.auth(new DiplomaOborotovIS.data.api.model.user.AuthBody
+            {
+                Login = tbLoginUser.Text,
+                Password = pbPasswordUser.Password
+            });
+            if (response.Access_token != "")
+            {
+                Application.Current.MainWindow.Hide();
+                new wdMain().ShowDialog();
+                Application.Current.MainWindow.Close();
+                tbLoginUser.Text = "";
+                pbPasswordUser.Password = "";
+            }
+            else
+                MessageBox.Show("Error");
         }
     }
 }
