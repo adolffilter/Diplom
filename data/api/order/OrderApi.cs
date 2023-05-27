@@ -63,7 +63,7 @@ namespace diplomaISPr22_33_PankovEA.data.api.order
         {
             var token = localStorage.Get<AuthResponse>("token").Access_token;
 
-            var builder = new UriBuilder($"http://localhost:5000/api/Order/{orderId}/Warehouse");
+            var builder = new UriBuilder($"http://localhost:5000/api/Order/{orderId}/Warehouse"); 
 
             var query = HttpUtility.ParseQueryString(builder.Query);
             query["state"] = state.ToString();
@@ -81,7 +81,7 @@ namespace diplomaISPr22_33_PankovEA.data.api.order
         {
             var token = localStorage.Get<AuthResponse>("token").Access_token;
 
-            var builder = new UriBuilder($"http://localhost:5000/api/Warehouse/{orderWarehouseId}/State");
+            var builder = new UriBuilder($"http://localhost:5000/api/Order/Warehouse/{orderWarehouseId}/State");
 
             var query = HttpUtility.ParseQueryString(builder.Query);
             query["state"] = state.ToString();
@@ -93,6 +93,39 @@ namespace diplomaISPr22_33_PankovEA.data.api.order
             request.Headers.TryAddWithoutValidation("Authorization", $"Bearer {token}");
 
             var response = httpClient.SendAsync(request).Result;
+
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine(orderWarehouseId);
+            Trace.WriteLine(state);
+            Trace.WriteLine(response.StatusCode);
+            Trace.WriteLine(response.Content);
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
         }
 
         public void Add(CreateOrder body)
