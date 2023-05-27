@@ -1,4 +1,7 @@
-﻿using System;
+﻿using diplomaISPr22_33_PankovEA.data.api.order;
+using diplomaISPr22_33_PankovEA.data.api.order.model;
+using diplomaISPr22_33_PankovEA.Windows.Add;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,14 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
         public pgOrders()
         {
             InitializeComponent();
+            update();
+        }
+
+        void update()
+        {
+            var api = new OrderApi();
+            IEnumerable<Order> list = api.GetAll();
+            dgvOrder.ItemsSource = list;
         }
 
         private void clDel(object sender, RoutedEventArgs e)
@@ -31,6 +42,17 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
         }
 
         private void clChang(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void clOpenAddOrder(object sender, RoutedEventArgs e)
+        {
+            new pgAddOrder().ShowDialog();
+            update();
+        }
+
+        private void tcSerch(object sender, TextChangedEventArgs e)
         {
 
         }

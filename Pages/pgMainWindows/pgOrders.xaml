@@ -29,33 +29,35 @@
                 <TextBox x:Name="tbSerch" Text="" Margin="5 0 0 0" TextChanged="tcSerch" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Поиск" />
             </StackPanel>
 
-            <DataGrid Grid.Row="1" x:Name="dgvDoctors" Style="{StaticResource MaterialDesignDataGrid}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid Grid.Row="1" x:Name="dgvOrder" Style="{StaticResource MaterialDesignDataGrid}" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
 
 
                     <DataGridTextColumn Header="#" IsReadOnly="True" CanUserReorder="False" Width="auto" Binding="{Binding Id}"/>
 
+                    <DataGridTextColumn Header="Названия оборудования" IsReadOnly="True" CanUserReorder="False" Width="*" Binding="{Binding Title}"/>
 
-                    <DataGridTemplateColumn Header="Названия оборудования" IsReadOnly="True" Width="*">
+                    <DataGridTemplateColumn Header="Поставщик" IsReadOnly="True" Width="*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Ellipse Width="45" Height="45" Margin="0 0 10 0" >
                                         <Ellipse.Fill>
                                             <ImageBrush ImageSource="{Binding Photo, TargetNullValue={StaticResource photo}}" Stretch="UniformToFill" 
-                                                        RenderOptions.BitmapScalingMode="HighQuality"/>
+                                                        RenderOptions.BitmapScalingMode="HighQuality" AlignmentY="Top"/>
                                         </Ellipse.Fill>
                                     </Ellipse>
 
-                                    <TextBlock Text="{Binding LastName}" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Provider.FirstName}" VerticalAlignment="Center"/>
                                     <TextBlock Text=" " VerticalAlignment="Center"/>
-                                    <TextBlock Text="{Binding FirstName}" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Provider.FirstName}" VerticalAlignment="Center"/>
                                     <TextBlock Text=" " VerticalAlignment="Center"/>
-                                    <TextBlock Text="{Binding MidleName}" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Provider.MidleName}" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+
 
                     <DataGridTextColumn Header="Статус" IsReadOnly="True" CanUserReorder="False" Width="*" Binding="{Binding Post.Name}"/>
 
@@ -92,7 +94,7 @@
             </DataGrid>
         </Grid>
 
-        <Button Click="clDownload" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 20 20" Background="#E2F263" BorderBrush="Transparent" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" >
+        <Button Click="clOpenAddOrder" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 20 20" Background="#E2F263" BorderBrush="Transparent" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" >
             <Button.Content>
                 <materialDesign:PackIcon Kind="Plus" Foreground="#011826"/>
             </Button.Content>

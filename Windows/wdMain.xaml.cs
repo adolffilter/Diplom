@@ -1,4 +1,5 @@
-﻿using System;
+﻿using diplomaISPr22_33_PankovEA.Pages.pgMainWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,7 @@ namespace diplomaISPr22_33_PankovEA.Windows
 
         private void clOpenPageOrder(object sender, RoutedEventArgs e)
         {
-
+            frMain.Navigate(new pgOrders());
             BtBorderTransparent();
             btOpenPageOrder.BorderBrush = color;
         }
