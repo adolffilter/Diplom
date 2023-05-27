@@ -23,9 +23,9 @@ namespace diplomaISPr22_33_PankovEA.Windows
         public wdMain()
         {
             InitializeComponent();
+            frMain.Navigate(new pgStachs());
         }
         SolidColorBrush color = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E2F263"));
-        SolidColorBrush color1 = (SolidColorBrush)(new BrushConverter().ConvertFrom("#011826"));
 
         private void clOpenPageStack(object sender, RoutedEventArgs e)
         {
@@ -34,17 +34,18 @@ namespace diplomaISPr22_33_PankovEA.Windows
             btOpenPageStack.BorderBrush = color;
         }
 
-        void BtBorderTransparent()
-        {
-            btOpenPageStack.BorderBrush = Brushes.Transparent;
-            btOpenPageOrder.BorderBrush = Brushes.Transparent;
-        }
-
         private void clOpenPageOrder(object sender, RoutedEventArgs e)
         {
             frMain.Navigate(new pgOrders());
             BtBorderTransparent();
             btOpenPageOrder.BorderBrush = color;
         }
+
+        void BtBorderTransparent()
+        {
+            btOpenPageStack.BorderBrush = Brushes.Transparent;
+            btOpenPageOrder.BorderBrush = Brushes.Transparent;
+        }
+
     }
 }

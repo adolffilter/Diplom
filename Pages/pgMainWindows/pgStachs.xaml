@@ -59,7 +59,7 @@
                     </DataGridTemplateColumn>
 
 
-                    <DataGridTextColumn Header="Статус" IsReadOnly="True" CanUserReorder="False" Width="*" Binding="{Binding Post.Name}"/>
+                    <DataGridTextColumn Header="Статус" IsReadOnly="True" CanUserReorder="False" Width="*" Binding="{Binding State}"/>
 
                     <DataGridTemplateColumn x:Name="Operations" Header="Операции" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>

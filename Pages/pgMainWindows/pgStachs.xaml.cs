@@ -1,4 +1,9 @@
-﻿using System;
+﻿using diplomaISPr22_33_PankovEA.data.api.order;
+using diplomaISPr22_33_PankovEA.data.api.order.model;
+using diplomaISPr22_33_PankovEA.data.api.provider;
+using diplomaISPr22_33_PankovEA.data.api.provider.model;
+using diplomaISPr22_33_PankovEA.Windows.Add;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +25,39 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
     /// </summary>
     public partial class pgStachs : Page
     {
+        IEnumerable<WarehouseOrder> list;
         public pgStachs()
         {
             InitializeComponent();
+            update();
+        }
+        void update()
+        {
+            var api = new OrderApi();
+            list = api.GetWarehouseAll();
+            dgvOrder.ItemsSource = list;
+        }
+
+        private void clOpenAddOrder(object sender, RoutedEventArgs e)
+        {
+            new wdAddEquipment().ShowDialog();
+            update();
+        }
+
+        private void clDel(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void clChang(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tcSerch(object sender, TextChangedEventArgs e)
+        {
+            list = list.Where(p => p.Title.Contains(tbSerch.Text.ToLower()));
+            dgvOrder.ItemsSource = list;
         }
     }
 }

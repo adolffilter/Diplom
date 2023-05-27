@@ -52,7 +52,7 @@
         </Grid>
 
         <Grid Grid.Row ="1">
-            <Frame x:Name="frMain"/>
+            <Frame x:Name="frMain" NavigationUIVisibility="Hidden"/>
         </Grid>
 
     </Grid>
