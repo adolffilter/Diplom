@@ -28,9 +28,8 @@ namespace diplomaISPr22_33_PankovEA.Windows.Edit
         {
             this.WarehouseOrder = warehouseOrder;
             InitializeComponent();
-            DataContext = WarehouseOrder;
-            ;
             cbRole.ItemsSource = theList;
+            DataContext = WarehouseOrder;
 
         }
 
