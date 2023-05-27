@@ -1,6 +1,10 @@
-﻿using diplomaISPr22_33_PankovEA.Pages.pgMainWindows;
+﻿using diplomaISPr22_33_PankovEA.data.api.user;
+using diplomaISPr22_33_PankovEA.Pages.pgMainWindows;
+using DiplomaOborotovIS.data.api.model.user;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +28,17 @@ namespace diplomaISPr22_33_PankovEA.Windows
         {
             InitializeComponent();
             frMain.Navigate(new pgStachs());
+            update();
         }
+
+        void update()
+        {
+            var api = new UserApi();
+            User user = api.getUser();
+            DataContext = user;
+            tbGetUser.Text = user.LastName + " " + user.FirstName;
+        }
+
         SolidColorBrush color = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E2F263"));
 
         private void clOpenPageStack(object sender, RoutedEventArgs e)
@@ -47,5 +61,27 @@ namespace diplomaISPr22_33_PankovEA.Windows
             btOpenPageOrder.BorderBrush = Brushes.Transparent;
         }
 
+        void downloadImage()
+        {
+            OpenFileDialog openFile = new OpenFileDialog { Filter = "Jpeg files|*.jpg|All file|*.*" };
+
+            if (openFile.ShowDialog() == true)
+            {
+                //User.Photo = File.ReadAllBytes(openFile.FileName);
+
+                var api = new UserApi();
+                var uri = new Uri(openFile.FileName);
+                var bitmap = new BitmapImage(uri);
+                api.updatePhoto(File.ReadAllBytes(openFile.FileName));
+                ImageProfile.ImageSource = bitmap;
+
+
+            }
+        }
+
+        private void mdDownloadImage(object sender, MouseButtonEventArgs e)
+        {
+            downloadImage();
+        }
     }
 }

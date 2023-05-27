@@ -27,9 +27,9 @@
         <Grid Grid.Row="0" Background="#011826">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Orientation="Horizontal">
                 <!--Image-->
-                <Border Width="60" Height="60" CornerRadius="360" BorderBrush="#E2F263" BorderThickness="2">
+                <Border Width="60" Height="60" CornerRadius="360" BorderBrush="#E2F263" BorderThickness="2" MouseDown="mdDownloadImage">
                     <Border.Background>
-                        <ImageBrush ImageSource="{Binding Photo, TargetNullValue={StaticResource photo}}"/>
+                        <ImageBrush x:Name="ImageProfile" ImageSource="{Binding Photo, TargetNullValue={StaticResource photo}}" Stretch="UniformToFill" AlignmentY="Top"/>
                     </Border.Background>
                 </Border>
                 <StackPanel Margin="15 0 0 0">
