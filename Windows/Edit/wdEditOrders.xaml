@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:diplomaISPr22_33_PankovEA.Windows.Edit"
         mc:Ignorable="d"
-        Title="wdEditOrders" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+        Title="" Height="450" Width="400" >
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="BlueGrey" SecondaryColor="Cyan"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="tbTitle" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Title}" materialDesign:HintAssist.Hint="Названия"/>
+            <TextBox x:Name="tbDescription" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Описания" 
+                    TextWrapping="Wrap" Width="300" Height="150"
+                    AcceptsReturn="True" Text="{Binding Description}"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto"
+                 />
+            <Button x:Name="btSave" Click="clSave" Content="Сохранить" Foreground="#ffffff" materialDesign:ButtonAssist.CornerRadius="25" Margin="0 50" HorizontalAlignment="Left" Width="150"  Height="50"/>
+
+        </StackPanel>
     </Grid>
 </Window>

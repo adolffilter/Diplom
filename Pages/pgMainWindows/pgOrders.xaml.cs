@@ -1,6 +1,7 @@
 ﻿using diplomaISPr22_33_PankovEA.data.api.order;
 using diplomaISPr22_33_PankovEA.data.api.order.model;
 using diplomaISPr22_33_PankovEA.Windows.Add;
+using diplomaISPr22_33_PankovEA.Windows.Edit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,12 +40,16 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
 
         private void clDel(object sender, RoutedEventArgs e)
         {
-
+            Order del = (sender as Button).DataContext as Order;
+            var api = new OrderApi();
+            api.Delete(del.Id);
         }
 
         private void clChang(object sender, RoutedEventArgs e)
         {
-
+            Order edit = (sender as Button).DataContext as Order;
+            new wdEditOrders(edit).ShowDialog();
+            update();
         }
 
         private void clOpenAddOrder(object sender, RoutedEventArgs e)

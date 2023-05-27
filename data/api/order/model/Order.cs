@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace diplomaISPr22_33_PankovEA.data.api.order.model
 {
-    internal class Order
+    public class Order
     {
         [Key] public int Id { get; set; }
         [Required, MaxLength(256)] public string Title { get; set; } = string.Empty;

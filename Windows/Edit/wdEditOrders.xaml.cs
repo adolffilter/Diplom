@@ -1,4 +1,6 @@
-﻿using System;
+﻿using diplomaISPr22_33_PankovEA.data.api.order;
+using diplomaISPr22_33_PankovEA.data.api.order.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,23 @@ namespace diplomaISPr22_33_PankovEA.Windows.Edit
     /// </summary>
     public partial class wdEditOrders : Window
     {
-        public wdEditOrders()
+        Order Order;
+        public wdEditOrders(Order order)
         {
+            this.Order = order;
             InitializeComponent();
+            DataContext = Order;
+        }
+
+        private void clSave(object sender, RoutedEventArgs e)
+        {
+            var api = new OrderApi();
+            api.Update(Order.Id, new CreateOrder
+            {
+                Description = tbDescription.Text,
+                ProviderId = Order.Provider.Id,
+                Title = tbTitle.Text,
+            });
         }
     }
 }
