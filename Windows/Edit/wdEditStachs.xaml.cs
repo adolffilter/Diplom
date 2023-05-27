@@ -1,4 +1,6 @@
-﻿using System;
+﻿using diplomaISPr22_33_PankovEA.data.api.order;
+using diplomaISPr22_33_PankovEA.data.api.order.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,19 @@ namespace diplomaISPr22_33_PankovEA.Windows.Edit
     /// </summary>
     public partial class wdEditStachs : Window
     {
-        public wdEditStachs()
+        WarehouseOrder WarehouseOrder;
+        public wdEditStachs(WarehouseOrder warehouseOrder)
         {
+            this.WarehouseOrder = warehouseOrder;
             InitializeComponent();
+            DataContext = WarehouseOrder;
+        }
+
+        private void clSave(object sender, RoutedEventArgs e)
+        {
+            var api = new OrderApi();
+            api.UpdateWarehouseState(WarehouseOrder.Id, WarehouseState.ON_WAREHOUSE);
+            Close();
         }
     }
 }
