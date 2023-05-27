@@ -29,6 +29,7 @@ namespace diplomaISPr22_33_PankovEA.Windows
 
         private void clOpenPageStack(object sender, RoutedEventArgs e)
         {
+            frMain.Navigate(new pgStachs());
             BtBorderTransparent();
             btOpenPageStack.BorderBrush = color;
         }
