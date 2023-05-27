@@ -27,14 +27,14 @@
         <Grid Grid.Row="0" Background="#011826">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Orientation="Horizontal">
                 <!--Image-->
-                <Border Width="60" Height="60" CornerRadius="360" BorderBrush="#E2F263" BorderThickness="2">
+                <Border Width="60" Height="60" CornerRadius="360" BorderBrush="#E2F263" BorderThickness="2" MouseDown="mdDownloadImage">
                     <Border.Background>
-                        <ImageBrush ImageSource="{Binding Photo, TargetNullValue={StaticResource photo}}"/>
+                        <ImageBrush x:Name="ImageProfile" ImageSource="{Binding Photo, TargetNullValue={StaticResource photo}}" Stretch="UniformToFill" AlignmentY="Top"/>
                     </Border.Background>
                 </Border>
                 <StackPanel Margin="15 0 0 0">
                     <TextBlock x:Name="tbGetUser" Text="Бирюков Алесандр" Foreground="#EEF280" Margin="15 0 0 0"  FontSize="20"/>
-                    <Button x:Name="btOutSing" Style="{StaticResource MaterialDesignFlatAccentButton}" HorizontalAlignment="Left">
+                    <Button x:Name="btOutSing" Click="clLeft" Style="{StaticResource MaterialDesignFlatAccentButton}" HorizontalAlignment="Left">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ExitToApp" Height="20" Width="20" Foreground="#FFFFFF"/>

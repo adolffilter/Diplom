@@ -1,4 +1,6 @@
-﻿using System;
+﻿using diplomaISPr22_33_PankovEA.data.api.order;
+using diplomaISPr22_33_PankovEA.data.api.order.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,29 @@ namespace diplomaISPr22_33_PankovEA.Windows.Edit
     /// </summary>
     public partial class wdEditStachs : Window
     {
-        public wdEditStachs()
+        List<WarehouseState> theList = Enum.GetValues(typeof(WarehouseState)).Cast<WarehouseState>().ToList();
+        List<WarehouseState> roles;
+        WarehouseOrder WarehouseOrder;
+        public wdEditStachs(WarehouseOrder warehouseOrder)
         {
+            this.WarehouseOrder = warehouseOrder;
             InitializeComponent();
+            cbRole.ItemsSource = theList;
+            DataContext = WarehouseOrder;
+
+        }
+
+        private void clSave(object sender, RoutedEventArgs e)
+        {
+            if (cbRole.SelectedItem != null)
+            {
+                var api = new OrderApi();
+                api.UpdateWarehouseState(WarehouseOrder.Id, theList[cbRole.SelectedIndex]);
+                Close();
+
+            }
+            else
+                cbRole.BorderBrush = Brushes.Red;
         }
     }
 }

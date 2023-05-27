@@ -3,6 +3,7 @@ using diplomaISPr22_33_PankovEA.data.api.order.model;
 using diplomaISPr22_33_PankovEA.data.api.provider;
 using diplomaISPr22_33_PankovEA.data.api.provider.model;
 using diplomaISPr22_33_PankovEA.Windows.Add;
+using diplomaISPr22_33_PankovEA.Windows.Edit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,11 +47,18 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
 
         private void clDel(object sender, RoutedEventArgs e)
         {
-            WarehouseOrder order; 
+            WarehouseOrder orderDel = (sender as Button).DataContext as WarehouseOrder;
+            var api = new OrderApi();
+            api.Delete(orderDel.Id);
+            NavigationService.Navigate(new pgStachs());
         }
 
         private void clChang(object sender, RoutedEventArgs e)
         {
+            WarehouseOrder orderEdit = (sender as Button).DataContext as WarehouseOrder;
+            var api = new OrderApi();
+            new wdEditStachs(orderEdit).ShowDialog();
+            NavigationService.Navigate(new pgStachs());
 
         }
 

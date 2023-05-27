@@ -123,11 +123,32 @@ namespace diplomaISPr22_33_PankovEA.data.api.order
         {
             var token = localStorage.Get<AuthResponse>("token").Access_token;
 
-            var request = new HttpRequestMessage(HttpMethod.Delete, $"http://localhost:5000/api/Order/{id}");
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"http://localhost:5000/api/Order?id={id}");
 
             request.Headers.TryAddWithoutValidation("Authorization", $"Bearer {token}");
 
             var response = httpClient.SendAsync(request).Result;
+
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine(id);
+            Trace.WriteLine(response.StatusCode);
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
+            Trace.WriteLine("text");
         }
     }
 }
