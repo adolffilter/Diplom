@@ -46,7 +46,7 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
 
         private void clDel(object sender, RoutedEventArgs e)
         {
-
+            WarehouseOrder order; 
         }
 
         private void clChang(object sender, RoutedEventArgs e)

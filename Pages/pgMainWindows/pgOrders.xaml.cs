@@ -43,7 +43,7 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
             Order del = (sender as Button).DataContext as Order;
             var api = new OrderApi();
             api.Delete(del.Id);
-            update();
+            NavigationService.Navigate(new pgOrders());
         }
 
         private void clChang(object sender, RoutedEventArgs e)

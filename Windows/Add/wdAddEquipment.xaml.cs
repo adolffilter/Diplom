@@ -26,7 +26,7 @@ namespace diplomaISPr22_33_PankovEA.Windows.Add
         {
             InitializeComponent();
             var api = new OrderApi();
-            orders = api.GetAll();
+            orders = api.GetAll(null, false);
             cbOrders.ItemsSource = orders;
         }
 
