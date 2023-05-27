@@ -36,13 +36,15 @@ namespace diplomaISPr22_33_PankovEA.Windows.Edit
 
         private void clSave(object sender, RoutedEventArgs e)
         {
-            if(cbRole.SelectedItem != null)
+            if (cbRole.SelectedItem != null)
             {
-            var api = new OrderApi();
-            api.UpdateWarehouseState(WarehouseOrder.Id, theList[cbRole.SelectedIndex]);
-            Close();
+                var api = new OrderApi();
+                api.UpdateWarehouseState(WarehouseOrder.Id, theList[cbRole.SelectedIndex]);
+                Close();
 
             }
+            else
+                cbRole.BorderBrush = Brushes.Red;
         }
     }
 }
