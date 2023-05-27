@@ -34,7 +34,7 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
         void update()
         {
             var api = new OrderApi();
-            list = api.GetAll();
+            list = api.GetAll(null, false);
             dgvOrder.ItemsSource = list;
         }
 
