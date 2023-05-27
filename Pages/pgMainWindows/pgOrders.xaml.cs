@@ -23,6 +23,7 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
     /// </summary>
     public partial class pgOrders : Page
     {
+        IEnumerable<Order> list;
         public pgOrders()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
         void update()
         {
             var api = new OrderApi();
-            IEnumerable<Order> list = api.GetAll();
+            list = api.GetAll();
             dgvOrder.ItemsSource = list;
         }
 
@@ -54,7 +55,8 @@ namespace diplomaISPr22_33_PankovEA.Pages.pgMainWindows
 
         private void tcSerch(object sender, TextChangedEventArgs e)
         {
-
+            list = list.Where(p => p.Title.Contains(tbSerch.Text.ToLower()));
+            dgvOrder.ItemsSource = list;
         }
     }
 }
