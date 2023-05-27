@@ -21,19 +21,28 @@ namespace diplomaISPr22_33_PankovEA.Windows.Edit
     /// </summary>
     public partial class wdEditStachs : Window
     {
+        List<WarehouseState> theList = Enum.GetValues(typeof(WarehouseState)).Cast<WarehouseState>().ToList();
+        List<WarehouseState> roles;
         WarehouseOrder WarehouseOrder;
         public wdEditStachs(WarehouseOrder warehouseOrder)
         {
             this.WarehouseOrder = warehouseOrder;
             InitializeComponent();
             DataContext = WarehouseOrder;
+            ;
+            cbRole.ItemsSource = theList;
+
         }
 
         private void clSave(object sender, RoutedEventArgs e)
         {
+            if(cbRole.SelectedItem != null)
+            {
             var api = new OrderApi();
-            api.UpdateWarehouseState(WarehouseOrder.Id, WarehouseState.ON_WAREHOUSE);
+            api.UpdateWarehouseState(WarehouseOrder.Id, theList[cbRole.SelectedIndex]);
             Close();
+
+            }
         }
     }
 }

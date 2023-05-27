@@ -35,7 +35,7 @@ namespace diplomaISPr22_33_PankovEA.Windows.Add
             if (cbOrders.SelectedItem != null)
             {
                 var api = new OrderApi();
-                api.CreateOrderWarehouse(orders[cbOrders.SelectedIndex].Id, WarehouseState.ON_ENTERPRISE);
+                api.CreateOrderWarehouse(orders[cbOrders.SelectedIndex].Id, WarehouseState.ON_WAREHOUSE);
                 Close();
             }
             else

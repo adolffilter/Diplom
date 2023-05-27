@@ -34,14 +34,20 @@ namespace diplomaISPr22_33_PankovEA.Windows.Add
 
         private void clSave(object sender, RoutedEventArgs e)
         {
-            var api = new OrderApi();
-            api.Add(new data.api.order.model.CreateOrder
+            if (cbProvider.ItemsSource != null)
             {
-                Description = tbDescription.Text,
-                Title = tbTitle.Text,
-                ProviderId = providers[cbProvider.SelectedIndex].Id
-            });
-            Close();
+
+                var api = new OrderApi();
+                api.Add(new data.api.order.model.CreateOrder
+                {
+                    Description = tbDescription.Text,
+                    Title = tbTitle.Text,
+                    ProviderId = providers[cbProvider.SelectedIndex].Id
+                });
+                Close();
+            }
+            else
+                cbProvider.BorderBrush = Brushes.Red;
         }
     }
 }

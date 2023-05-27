@@ -34,7 +34,7 @@
                 </Border>
                 <StackPanel Margin="15 0 0 0">
                     <TextBlock x:Name="tbGetUser" Text="Бирюков Алесандр" Foreground="#EEF280" Margin="15 0 0 0"  FontSize="20"/>
-                    <Button x:Name="btOutSing" Style="{StaticResource MaterialDesignFlatAccentButton}" HorizontalAlignment="Left">
+                    <Button x:Name="btOutSing" Click="clLeft" Style="{StaticResource MaterialDesignFlatAccentButton}" HorizontalAlignment="Left">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ExitToApp" Height="20" Width="20" Foreground="#FFFFFF"/>

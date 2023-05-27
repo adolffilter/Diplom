@@ -3,6 +3,7 @@
     internal enum UserRole
     {
         BaseUser,
-        AdminUser
+        AdminUser,
+        ProviderUser
     }
 }

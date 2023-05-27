@@ -27,6 +27,9 @@
                     HorizontalScrollBarVisibility="Disabled"
                     VerticalScrollBarVisibility="Auto"
                  />
+
+            <ComboBox x:Name="cbRole" Margin="0 15"/>
+
             <Button x:Name="btSave" Click="clSave" Content="Сохранить" Foreground="#ffffff" materialDesign:ButtonAssist.CornerRadius="25" Margin="0 50" HorizontalAlignment="Left" Width="150"  Height="50"/>
 
         </StackPanel>

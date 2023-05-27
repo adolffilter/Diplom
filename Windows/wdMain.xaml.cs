@@ -83,5 +83,12 @@ namespace diplomaISPr22_33_PankovEA.Windows
         {
             downloadImage();
         }
+
+        private void clLeft(object sender, RoutedEventArgs e)
+        {
+                var api = new UserApi();
+            api.SignOut();
+            Close();
+        }
     }
 }

@@ -48,7 +48,7 @@
                                         </Ellipse.Fill>
                                     </Ellipse>
 
-                                    <TextBlock Text="{Binding Provider.FirstName}" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Provider.LastName}" VerticalAlignment="Center"/>
                                     <TextBlock Text=" " VerticalAlignment="Center"/>
                                     <TextBlock Text="{Binding Provider.FirstName}" VerticalAlignment="Center"/>
                                     <TextBlock Text=" " VerticalAlignment="Center"/>
