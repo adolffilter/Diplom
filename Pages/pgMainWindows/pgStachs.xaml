@@ -36,27 +36,7 @@
                     <DataGridTextColumn Header="#" IsReadOnly="True" CanUserReorder="False" Width="auto" Binding="{Binding Id}"/>
 
                     <DataGridTextColumn Header="Названия оборудования" IsReadOnly="True" CanUserReorder="False" Width="*" Binding="{Binding Title}"/>
-
-                    <DataGridTemplateColumn Header="Поставщик" IsReadOnly="True" Width="*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Ellipse Width="45" Height="45" Margin="0 0 10 0" >
-                                        <Ellipse.Fill>
-                                            <ImageBrush ImageSource="{Binding Photo, TargetNullValue={StaticResource photo}}" Stretch="UniformToFill" 
-                                                        RenderOptions.BitmapScalingMode="HighQuality" AlignmentY="Top"/>
-                                        </Ellipse.Fill>
-                                    </Ellipse>
-
-                                    <TextBlock Text="{Binding Provider.LastName}" VerticalAlignment="Center"/>
-                                    <TextBlock Text=" " VerticalAlignment="Center"/>
-                                    <TextBlock Text="{Binding Provider.FirstName}" VerticalAlignment="Center"/>
-                                    <TextBlock Text=" " VerticalAlignment="Center"/>
-                                    <TextBlock Text="{Binding Provider.MidleName}" VerticalAlignment="Center"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                   
 
 
                     <DataGridTextColumn Header="Статус" IsReadOnly="True" CanUserReorder="False" Width="*" Binding="{Binding State}"/>

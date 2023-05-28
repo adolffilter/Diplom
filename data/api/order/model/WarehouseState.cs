@@ -3,6 +3,7 @@
     public enum WarehouseState
     {
         ON_ENTERPRISE,
-        ON_WAREHOUSE
+        ON_WAREHOUSE,
+        ON_BROKEN
     }
 }

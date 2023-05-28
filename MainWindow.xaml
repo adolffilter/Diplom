@@ -20,7 +20,7 @@
 
     <Grid >
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\hdnhd\Source\Repos\diplomaISPr22-33_PankovEA\Resources\5YXAp1RNeq4 1.png"/>
+            <ImageBrush ImageSource="\Resources\5YXAp1RNeq4 1.png"/>
         </Grid.Background>
         <Border Height="480" Width="480" VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="10">
             <Border.Background>
